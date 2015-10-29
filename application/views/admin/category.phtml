@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<title>SQLite3</title>
+		<link rel="stylesheet" href="/css/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<?php include "header.phtml" ?>
+			<div class="content">
+			<div>
+				<ul>
+					<li><a href="/admin/add">Add Category</a></li>
+					<li>
+						Order By
+						<select>
+							<option>ID</option>
+							<option>Name</option>
+							<option>Create Time</option>
+						</select>
+					</li>
+					<li>
+						Order
+						<select>
+							<option>ASC</option>
+							<option>DESC</option>
+						</select>
+					</li>
+				</ul>
+			</div>
+			<div>
+				<ul>
+					<?php
+						foreach($categories as $v) {
+					?>
+					<li><a href="/admin/category/edit/<?php echo $v->id; ?>"><?php echo $v->name; ?></a></li>
+					<?php
+						}
+					?>
+				</ul>
+				</div>
+		</div>
+	</body>
+</html>
